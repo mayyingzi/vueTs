@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>test</title>
+    <script>
+      document.documentElement.style.fontSize = 100 * innerWidth / 750 + 'px'
+      addEventListener('load', function() {
+        setTimeout(function(){
+           document.documentElement.style.fontSize = 100 * innerWidth / 750 + 'px'
+           window.unit = 100 * innerWidth / 750;
+           var e = document.createEvent('Event');
+           e.initEvent('adjustReady', true, true);
+           window.dispatchEvent(e);
+        }, 480);
+      })
+      addEventListener('orientationchange', function() {
+          setTimeout(function(){
+            document.documentElement.style.fontSize = 100 * innerWidth / 750 + 'px'
+          }, 480)
+     
+      });
+      </script> 
   </head>
   <body>
     <div id="app"></div>
